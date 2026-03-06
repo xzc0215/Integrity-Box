@@ -40,10 +40,36 @@
         <div class="button-grid">
           <button class="btn" data-type="flags"><span class="icon material-symbols-outlined">handyman</span>Module Settings<div class="spinner"></div></button>
           <button class="btn" data-type="profile"><span class="icon material-symbols-outlined">man</span>Set Profile<div class="spinner"></div></button>
-          <button class="btn" data-type="ctrl"><span class="icon material-symbols-outlined">settings</span>Advanced Control <div class="spinner"></div></button>
-          <button class="btn" data-type="hash"><span class="icon material-symbols-outlined">threat_intelligence</span>Fix Abnormal Boot Hash<div class="spinner"></div></button>
-          <button class="btn" data-script="resetprop.sh" onclick="ksu.exec(`su -c 'for p in $(getprop | grep -E pphooks\|gphooks\|pihook\|pixelprops\|gms\|pi | sed -E s/^\\[\\(.*\\)\\]:.*/\\1/); do resetprop -p -d $p; done; pm list packages | grep -q com.reveny.nativecheck && am force-stop com.reveny.nativecheck'`)"><span class='icon material-symbols-outlined'>drag_click</span>Hide PIF Hook Detection<div class='spinner'></div></button>
+          <button class="btn" data-type="ctrl"><span class="icon material-symbols-outlined">settings</span>Zygiskless Mode <div class="spinner"></div></button>
           <button class="btn" data-script="override_lineage.sh" data-type="lineage"><span class="icon material-symbols-outlined">visibility_off</span>Spoof Lineage Props<div class="spinner"></div></button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h3 class="group-title">Detection</h3>
+        <div class="button-grid">
+          <button class="btn" data-type="hash"><span class="icon material-symbols-outlined">threat_intelligence</span>Fix Abnormal Boot Hash<div class="spinner"></div></button>
+          <button class="btn" data-script="resetprop.sh" data-type="resetprop"><span class="icon material-symbols-outlined">drag_click</span>Hide PIF Detection<div class="spinner"></div></button>
+<!--          <button class="btn" data-script="resetprop.sh" onclick="ksu.exec(`su -c 'for p in $(getprop | grep -E pphooks\|gphooks\|pihook\|pixelprops\|gms\|pi | sed -E s/^\\[\\(.*\\)\\]:.*/\\1/); do resetprop -p -d $p; done; pm list packages | grep -q com.reveny.nativecheck && am force-stop com.reveny.nativecheck'`)"><span class='icon material-symbols-outlined'>drag_click</span>Hide PIF Hook Detection<div class='spinner'></div></button>
+-->
+          <button class="btn" data-script="nuke"><span class="icon material-symbols-outlined">delete</span>Nuke Logs<div class="spinner"></div></button>
+          <button class="btn" data-type="scanner"><span class="icon material-symbols-outlined">microbiology</span>Scan Flagged Apps <div class="spinner"></div></button>
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <h3 class="group-title">Toolkit</h3>
+        <div class="button-grid">
+          <button class="btn" data-type="utility"><span class="icon material-symbols-outlined">dynamic_form</span>Utility Box<div class="spinner"></div></button>
+          <button class="btn" data-script="status" data-type="status"><span class="icon material-symbols-outlined">help</span>Integrity Status<div class="spinner"></div></button>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <h3 class="group-title">Hide My Stuff</h3>
+        <div class="button-grid">
+          <button class="btn" data-script="hma.sh" data-type="hma"><span class="icon material-symbols-outlined">adb</span>Inject HMA Template<div class="spinner"></div></button>
+          <button class="btn" data-type="hide"><span class="icon material-symbols-outlined">visibility_off</span>Hide Sus Files <div class="spinner"></div></button>
         </div>
       </div>
 
@@ -58,30 +84,30 @@
       </div>
 
       <div class="button-group">
-        <h3 class="group-title">Tricky Store & TEE Simulator</h3>
+        <h3 class="group-title">Keybox Hub</h3>
         <div class="button-grid">
           <button class="btn" data-script="key.sh" data-type="keybox"><span class="icon material-symbols-outlined">deployed_code_update</span>Set Valid Keybox<div class="spinner"></div></button>
           <button class="btn" data-script="aosp" onclick='ksu.exec("sh -c \"cp /data/adb/modules/playintegrityfix/keybox/aosp_keybox.xml /data/adb/tricky_store/keybox.xml 2>/dev/null || true\"")'><span class="icon material-symbols-outlined">adb</span>Set AOSP Keybox<div class="spinner"></div></button>
-          <button class="btn" data-type="xml"><span class="icon material-symbols-outlined">key</span>Load Keyboxes <div class="spinner"></div></button>
-          <button class="btn" data-type="tee"><span class="icon material-symbols-outlined">key</span>Customize Keybox <div class="spinner"></div></button>
-          <button class="btn" data-type="patch"><span class="icon material-symbols-outlined">android</span>Security Patch <div class="spinner"></div></button>
-          <button class="btn" data-type="user"><span class="icon material-symbols-outlined">android</span>Blacklist Packages <div class="spinner"></div></button>
+          <button class="btn" data-type="xml"><span class="icon material-symbols-outlined">key</span>Key Simulator <div class="spinner"></div></button>
+          <button class="btn" data-type="tee"><span class="icon material-symbols-outlined">key</span>Target Simulator <div class="spinner"></div></button>
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <h3 class="group-title">Customize Tricky Store</h3>
+        <div class="button-grid">
+          <button class="btn" data-type="patch"><span class="icon material-symbols-outlined">android</span>Custom Patch <div class="spinner"></div></button>
+          <button class="btn" data-type="user"><span class="icon material-symbols-outlined">android</span>Blacklist Targets <div class="spinner"></div></button>
         </div>
       </div>
 
       <div class="button-group">
-        <h3 class="group-title">Hide My Stuff</h3>
+        <h3 class="group-title">Community & Support</h3>
         <div class="button-grid">
-          <button class="btn" data-script="hma.sh" data-type="hma"><span class="icon material-symbols-outlined">adb</span>Inject HMA Template<div class="spinner"></div></button>
-          <button class="btn" data-type="hide"><span class="icon material-symbols-outlined">visibility_off</span>Hide Sus Files <div class="spinner"></div></button>
-        </div>
-      </div>
-
-      <div class="button-group">
-        <h3 class="group-title">Custom ROM Spoofing</h3>
-        <div class="button-grid">
-          <button class="btn" data-script="nogms" onclick="ksu.exec('[ -d /data/adb/Box-Brain ] && touch /data/adb/Box-Brain/disablegms || [ -d /data/adb/Box-Brain ] && rm -f /data/adb/Box-Brain/enablegms')"><span class="icon material-symbols-outlined">toggle_on</span>Disable Spoofing<div class="spinner"></div></button>
-          <button class="btn" data-script="yesgms" onclick="ksu.exec('[ -d /data/adb/Box-Brain ] && touch /data/adb/Box-Brain/enablegms || [ -d /data/adb/Box-Brain ] && rm -f /data/adb/Box-Brain/disablegms')"><span class="icon material-symbols-outlined">toggle_off</span>Enable Spoofing <div class="spinner"></div></button>
+          <button class="btn" data-script="support" data-type="support"><span class="icon material-symbols-outlined">volunteer_activism</span>Support the Developer <div class="spinner"></div></button>
+          <button class="btn" data-script="report" data-type="report"><span class="icon material-symbols-outlined">report</span>Report a Problem<div class="spinner"></div></button>
+          <button class="btn" data-script="assistant" data-type="assistant"><span class="icon material-symbols-outlined">help</span>Ask Assistant<div class="spinner"></div></button>
+          <button class="btn" data-script="faq"><span class="icon material-symbols-outlined">mic</span>FAQ<div class="spinner"></div></button>
         </div>
       </div>
       
@@ -102,13 +128,9 @@
       </div>
 
       <div class="button-group">
-        <h3 class="group-title">Community & Support</h3>
+        <h3 class="group-title">Custom ROM Spoofing</h3>
         <div class="button-grid">
-          <button class="btn" data-script="support" data-type="support"><span class="icon material-symbols-outlined">volunteer_activism</span>Support the Developer <div class="spinner"></div></button>
-          <button class="btn" data-script="report" data-type="report"><span class="icon material-symbols-outlined">report</span>Report a Problem<div class="spinner"></div></button>
-          <button class="btn" data-type="scanner"><span class="icon material-symbols-outlined">microbiology</span>Scan Flagged Apps <div class="spinner"></div></button>
-          <button class="btn" data-script="assistant" data-type="assistant"><span class="icon material-symbols-outlined">help</span>Ask Assistant<div class="spinner"></div></button>
-<!--          <button class="btn" data-type="about"><span class="icon material-symbols-outlined">help</span>Noob Guide <div class="spinner"></div></button> -->
+          <button class="btn" data-script="spoofing" data-type="spoofing"><span class="icon material-symbols-outlined">pause</span>Enable/Disable ROM's Inbuilt Spoofing<div class="spinner"></div></button>
         </div>
       </div>
     </main>
