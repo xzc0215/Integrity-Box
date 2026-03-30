@@ -1,23 +1,27 @@
-> Release Date: 07/03/2026
+> Release Date: 30/03/2026
 
-- Reduced zygisk injection code size by 60%
-- Added ability to spoof playstore into PixelStore
-- Dropped json support 
-- Added shortcut icons for action & webui
-- Updated HMA template
-- Separated vending and GMS prop controls
-- Spoofed security patch to March 2026
-- Switched fresh-install profile from "advanced" to "pixelify"
-- Added fingerprint config preservation on installation
-- Fixed compatibility issues on Samsung & OnePlus stock
-- Profile selection now only runs on fresh installations
-- Redesigned PlayIntegrityBox UI
-- Added Pixelify profile
-- Added inbuilt GMS Spoofing Manager
-- Added Play Integrity Manager
-- Added bulk blacklist selection with "Select All" button
-- Bulk blacklist shows count in success toast and skips duplicates
-- Added Utility Box Manager for system settings and module control
-- Re-Categorised MainUI
-- A few more things things I don't remember, see commits 🥀
-- 
+- Added auto pilot support to automatically update keybox whenever a valid keybox is available 
+
+- Added option to hide custom ROM detection caused by system props
+
+- Improved lineage sanitization code
+
+- Improved HMA injection code
+
+- Added option to kill daemon 
+
+- Updated Local fingerprints
+
+- Updated integrity downloader links & hashes
+
+- Fixed unconditional patch spoofing on sensitive devices 
+
+- Fixed inbuilt spoofing getting disabled on zygiskless installation 
+
+- Redesigned action interface
+
+- Nuked unnecessary stuff which aren't needed anymore 
+
+- Minor fixes & improvements under the hood
+
+## Remember me in your prayers 🤲🏻
