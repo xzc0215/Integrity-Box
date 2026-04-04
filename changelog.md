@@ -2,6 +2,8 @@
 
 #### THIS UPDATE IS MANDATORY 
 
+- Fixed play service crash
+
 - Stopped [service.d] boot script execution when module is disabled
 
 - Fixed ZN reset button bug
