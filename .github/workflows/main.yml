@@ -1,37 +1,28 @@
-name: Build Integrity Box Module
+name: Build Module
 
 on:
   push:
     branches:
       - main
-    tags:
-      - 'v*'
-  workflow_dispatch:
+      - master  # 兼容不同默認分支名
+  workflow_dispatch: # 允許手動點擊按鈕運行
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 確保有權限寫入 Release
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Zip Module
         run: |
-          # 排除 git 相關文件，將其餘內容打包
-          zip -r Integrity-Box.zip . -x ".git/*" ".github/*" ".gitignore" "README.md"
+          # 排除不必要的文件，打包其餘內容
+          zip -r Integrity-Box-v1.zip . -x ".git/*" ".github/*" ".gitignore" "README.md"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Integrity-Box-Module
-          path: Integrity-Box.zip
-
-      - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: Integrity-Box.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: Integrity-Box-Zip
+          path: Integrity-Box-v1.zip
